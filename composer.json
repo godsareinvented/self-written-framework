@@ -1,0 +1,6 @@
+{
+  "require": {
+    "psr/log": "3.*",
+    "ext-yaml": "*"
+  }
+}

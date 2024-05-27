@@ -1,7 +1,0 @@
-
-services:
-  App\Service\A: ~
-
-  App\Service\B:
-    arguments:
-      $a: 'App\Service\A'

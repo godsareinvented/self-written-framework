@@ -9,11 +9,12 @@ use Core\Exception\ExceptionList\RuntimeException;
 
 class ExceptionFactory
 {
-    public static function createExceptionByType(string $exceptionType = ExceptionBuilder::EXCEPTION_TYPE_RUNTIME_EXCEPTION): ExceptionInterface {
+    public static function createExceptionByType(string $exceptionType): ExceptionInterface
+    {
         return match ($exceptionType) {
-            ExceptionBuilder::EXCEPTION_TYPE_RUNTIME_EXCEPTION => new RuntimeException(),
-            ExceptionBuilder::EXCEPTION_TYPE_DOMAIN_EXCEPTION => new DomainException(),
-            default => new Exception()
+            ExceptionBuilder::EXCEPTION_TYPE_RUNTIME_EXCEPTION => new RuntimeException(''),
+            ExceptionBuilder::EXCEPTION_TYPE_DOMAIN_EXCEPTION => new DomainException(''),
+            default => new Exception('')
         };
     }
 }

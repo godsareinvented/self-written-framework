@@ -1,0 +1,10 @@
+services:
+  App\Service\C:
+    arguments:
+      $b: 'App\Service\B'
+
+  App\Service\B:
+    arguments:
+      $a: 'App\Service\A'
+
+  App\Service\A: ~

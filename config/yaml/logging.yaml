@@ -1,0 +1,6 @@
+logging:
+  canal_name: ''
+  writers:
+    - in_memory: ~
+    - file:
+        filepath: '%TEMP%/log.txt'

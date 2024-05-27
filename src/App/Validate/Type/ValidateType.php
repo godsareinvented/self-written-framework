@@ -12,7 +12,8 @@ class ValidateType implements ValidatorInterface
     /**
      * @throws Throwable
      */
-    public function __invoke(string $type, mixed $value): bool {
+    public function __invoke(string $type, mixed $value): bool
+    {
         if ('' === $type) {
             ExceptionBuilder::new()
                 ->setLanguageMessage('An empty validator type has been transferred', Language::EN)

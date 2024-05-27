@@ -1,0 +1,8 @@
+routing:
+  - request_uri: '/'
+    default: true
+    callable: 'App\Controller\FooController::bar'
+
+  - request_uri: '/foo/baz'
+    method: 'post'
+    callable: 'App\Controller\FooController::baz'

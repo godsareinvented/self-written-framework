@@ -4,12 +4,14 @@ namespace Core;
 
 class Autoloader
 {
-    public static function set(): void {
+    public static function set(): void
+    {
         \spl_autoload_register([self::class, 'callback']);
     }
 
-    private static function callback(string $namespaceAndFileName): void {
-        $directories = ['src/'];
+    private static function callback(string $namespaceAndFileName): void
+    {
+        $directories = ['src' . DIRECTORY_SEPARATOR];
 
         foreach ($directories as $directory) {
             $filePath = ROOT_DIR . $directory . $namespaceAndFileName . '.php';

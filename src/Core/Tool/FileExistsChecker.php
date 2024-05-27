@@ -2,6 +2,9 @@
 
 namespace Core\Tool;
 
+/**
+ * @deprecated
+ */
 class FileExistsChecker
 {
     public const MAIN_DIRECTORY_APP = APPLICATION_DIR;
@@ -18,7 +21,8 @@ class FileExistsChecker
         return \file_exists($mainDirectory . self::getPreparedFileName($extension, $filePathAndName));
     }
 
-    private static function getPreparedFileName(string $filePathAndName, string $extension): string {
+    private static function getPreparedFileName(string $filePathAndName, string $extension): string
+    {
         return \str_ends_with($extension, $filePathAndName)
             ? $filePathAndName
             : $filePathAndName . $extension;
