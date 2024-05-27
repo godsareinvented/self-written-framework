@@ -26,7 +26,7 @@ class AppropriateRouteFinder
          * @var Route $route
          */
         foreach ($routeMapOrganizedByMethod[$method] as $route) {
-            if ($route->isDefault() ||!$this->matchingCheck($requestUri, $route)) {
+            if ($route->isDefault() || !$this->matchingCheck($requestUri, $route)) {
                 continue;
             }
 

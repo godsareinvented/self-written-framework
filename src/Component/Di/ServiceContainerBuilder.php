@@ -87,7 +87,7 @@ class ServiceContainerBuilder implements ServiceContainerBuilderInterface
                         $currentServiceDefinition->addArgument($this->serviceDefinitionList[$argument]);
                         continue;
                     }
-                    $stack[]                 = $this->serviceDefinitionList[$argument];
+                    $stack[] = $this->serviceDefinitionList[$argument];
                     $areArgumentsInitialised = false;
                 }
                 if (!$areArgumentsInitialised) {
@@ -124,7 +124,7 @@ class ServiceContainerBuilder implements ServiceContainerBuilderInterface
     private function convertToServiceDefinitionList(): void
     {
         foreach ($this->rawServiceList as $classNameOrAlias => $serviceData) {
-            $serviceDefinition                                               = ServiceDefinitionParser::parse(
+            $serviceDefinition = ServiceDefinitionParser::parse(
                 $classNameOrAlias,
                 $serviceData
             );
@@ -154,7 +154,7 @@ class ServiceContainerBuilder implements ServiceContainerBuilderInterface
     private function isServiceExistingInServiceContainer(string $key, ServiceContainer $serviceContainer): bool
     {
         try {
-            return!! $serviceContainer->get($key);
+            return !!$serviceContainer->get($key);
         } catch (\Throwable) {
             return false;
         }
@@ -166,7 +166,7 @@ class ServiceContainerBuilder implements ServiceContainerBuilderInterface
      */
     private function throwExceptionIfNoConfig(): void
     {
-        if ($this->configuration === null) {
+        if (null === $this->configuration) {
             ExceptionBuilder::new()
                 ->setLanguageMessage('The configuration component must be passed', Language::EN)
                 ->setLanguageMessage('Компонент конфигурации должен быть передан', Language::RU)

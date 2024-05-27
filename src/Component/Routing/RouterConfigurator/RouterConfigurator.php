@@ -141,7 +141,7 @@ class RouterConfigurator implements RouterConfiguratorInterface
 
     private function addToAllMethodLists(): void
     {
-        foreach (Http::METHOD_LiST as $method) {
+        foreach (Http::METHOD_LIST as $method) {
             $this->addToSpecificMethodList($method);
         }
     }
@@ -153,7 +153,7 @@ class RouterConfigurator implements RouterConfiguratorInterface
     private function throwExceptionIfNoArguments(): void
     {
         if (
-            (!$this->lastRoute->getRequestUri() &&!$this->lastRoute->isDefault())
+               (!$this->lastRoute->getRequestUri() && !$this->lastRoute->isDefault())
             || (!$this->lastRoute->getCallback())
         ) {
             ExceptionBuilder::new()
